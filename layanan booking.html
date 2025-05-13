@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="id"> 
+<head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Tailor Citra Busana</title> 
+    <link rel="icon" href="image/logo.png"> 
+    <style>
+         body {
+            font-family:'Times New Roman', serif; 
+            margin: 0; 
+            padding: 0; 
+        }
+        header {
+            background: #D8D2C2; 
+            color: #000000; 
+            padding: 5px 0; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: right; 
+            align-items: center;
+        }
+
+        .logo img {
+            height: 100px; 
+            margin-right: 20px
+        }
+        header h1 {
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+            margin: 0; 
+            flex-grow: 1; 
+            text-align: left; 
+        }
+        header nav ul {
+            list-style: none; /* Menghilangkan bullet pada list */
+            padding: 0; /* Menghilangkan padding default */
+            margin: 0; /* Menghilangkan margin default */
+            display: flex; /* Menggunakan flexbox untuk menata item secara horizontal */
+            justify-content: center; /* Mengatur item agar berada di tengah */
+        }
+
+        header nav ul li {
+            margin: 0 15px; /* Memberikan jarak antar item list */
+        }
+
+        header nav ul li a {
+            color: #000000; /* Warna teks link */
+            text-decoration: none; /* Menghilangkan garis bawah pada link */
+            text-transform: capitalize; /* Mengubah semua huruf menjadi kapital */
+            font-size: 20px; /* Mengatur ukuran font link */
+            padding: 5px 7px; /* Memberikan padding pada link untuk area klik yang lebih besar */
+            transition: background-color 0.3s; /* Menambahkan efek transisi saat hover */
+            border-radius: 10px; 
+        }
+
+        header nav ul li a:hover {
+            background-color: #555; /* Mengubah latar belakang saat hover */
+            color: #fff; /* Mengubah warna teks saat hover */
+        }
+        footer {
+            background-image: url('image/mesin1.jpeg'); /* Ganti dengan path gambar kamu */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: rgb(15, 0, 0);
+            padding: 40px 20px;
+            font-family: 'Times New Roman', sans-serif;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: auto;
+            background-color: rgba(189, 167, 116, 0.85); /* Semi-transparan untuk kontras teks */
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        .footer-left h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .footer-links ul {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            list-style: none;
+            padding: 0;
+            margin: 0 0 20px 0;
+        gap: 5px;
+        }
+
+  .footer-links ul li a {
+    color: rgb(13, 13, 13);
+    text-decoration: none;
+    font-size: 14px;
+  }
+
+  .social-icons {
+    margin-top: 10px;
+  }
+
+  .social-icons a {
+    display: inline-block;
+    margin-right: 12px;
+  }
+
+  .social-icons a img {
+    width: 30px;
+    height: 30px;
+  }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="home.html"><img src="image/logo.png" alt="Logo Tailor Citra Busana"></a>
+        </div>
+        <h1>Tailor Citra Busana</h1> <!-- Judul utama website -->
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="profil.html">Profil</a></li> <!-- Link ke bagian Tentang Kami -->
+                <li><a href="produk.html">Produk</a></li> <!-- Link ke bagian Layanan -->
+                <li><a href="layanan booking.html">Layanan booking</a></li> <!-- Link ke bagian Kontak -->
+                <li><a href="ulasan.html">Ulasan</a></li>
+                <li><a href="pengembang.html">Pengembang</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- SECTION: Layanan Booking -->
+<section style="padding: 30px 20px; max-width: 600px; margin: auto; background-color: #fffaf0;">
+    <h2 style="color: maroon; text-align: center; margin-bottom: 20px;">Layanan Booking</h2>
+    <form class="booking-form" id="bookingForm" style="display: flex; flex-direction: column; gap: 15px;">
+      <label for="nama" style="font-weight: bold; color: #333;">Nama Lengkap:</label>
+      <input type="text" id="nama" name="nama" required style="padding: 10px; border: 1px solid #ccc; border-radius: 6px; font-size: 16px;">
+  
+      <label for="jenis" style="font-weight: bold; color: #333;">Apa yang ingin dijahit:</label>
+      <input type="text" id="jenis" name="jenis" placeholder="Contoh: Gamis, Kebaya" required style="padding: 10px; border: 1px solid #ccc; border-radius: 6px; font-size: 16px;">
+  
+      <label for="tanggal" style="font-weight: bold; color: #333;">Tanggal Booking:</label>
+      <input type="date" id="tanggal" name="tanggal" required style="padding: 10px; border: 1px solid #ccc; border-radius: 6px; font-size: 16px;">
+  
+      <button type="submit" style="background-color: maroon; color: white; padding: 12px; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; font-size: 16px;">
+        Kirim Booking via WhatsApp
+      </button>
+    </form>
+  </section>
+  
+  <script>
+    document.getElementById("bookingForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+  
+      const nama = document.getElementById("nama").value;
+      const jenis = document.getElementById("jenis").value;
+      const tanggal = document.getElementById("tanggal").value;
+  
+      const noWhatsApp = "6285731574811"; // GANTI dengan nomor WA pemilik
+      const pesan = `Halo, saya ingin booking jahitan.%0A%0ANama: ${nama}%0AJenis Jahitan: ${jenis}%0ATanggal Booking: ${tanggal}`;
+      const url = `https://wa.me/${noWhatsApp}?text=${pesan}`;
+  
+      window.open(url, "_blank");
+    });
+  </script>
+  
+</body>
+<footer>
+    <div class="footer-container">
+      <div class="footer-left">
+        <h2>Melayani :</h2>
+        <div class="footer-links">
+          <ul>
+            <li><a href="#">Jahit Seragam</a></li>
+            <li><a href="#">Jahit Gamis</a></li>
+            <li><a href="#">Jahit Baju Koko</a></li>
+            <li><a href="#">Jahit Rok</a></li>
+            <li><a href="#">Jahit Kebaya</a></li>
+            <li><a href="#">Chobani® Mexico</a></li>
+          </ul>
+        </div>
+        <div class="social-icons">
+          <a href="https://web.whatsapp.com/"><img src="image/wa (3).png" alt="whatsapp"></a>
+          <a href="#"><img src="image/gmail.png" alt="email"></a>
+          <a href="#"><img src="image/loc.png" alt="alamat"></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</html> 
